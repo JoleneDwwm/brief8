@@ -4,12 +4,10 @@
 <?php foreach ($instruments as $instrument): ?>
     <div>
         <header>
-            <h2><?= $instrument['Nom'] ?></h1>
-            <p><?= $instrument['Cat'] ?></p>
+            <a href="<?= "instrument.php?id=" . $instrument['ID'] ?>">
+            <h2><?= $instrument['Nom'] ?></h2></a>
         </header>
-            <p><?= $instrument['Descr'] ?></p>
-            <p><?= $instrument['Img'] ?></p>
-            <p><?= $instrument['Prix'] ?></p>
+            <p><?= $instrument['Prix'] ?> dollars</p>
     </div>
 <?php endforeach; ?>
 <?php $contents = ob_get_clean(); ?>
