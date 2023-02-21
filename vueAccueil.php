@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <?php foreach ($instruments as $instrument): ?>
-    <div>
+    <div class="card">
         <header>
             <a href="<?= "instrument.php?id=" . $instrument['ID'] ?>">
             <h2><?= $instrument['Nom'] ?></h2></a>

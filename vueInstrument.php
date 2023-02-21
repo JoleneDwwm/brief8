@@ -1,7 +1,7 @@
 <?php $titre = $instr['Cat'] . "Store"; ?>
 
 <?php ob_start(); ?>
-<div>
+<div class= "card">
         <header>
             <h2><?= $instr['Nom'] ?></h1>
             <p><?= $instr['Cat'] ?></p>
