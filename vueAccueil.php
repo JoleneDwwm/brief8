@@ -4,7 +4,7 @@
 <?php foreach ($instruments as $instrument): ?>
     <div class="card">
         <header>
-            <a href="<?= "instrument.php?id=" . $instrument['ID'] ?>">
+            <a href="<?= "index.php?action=instrument&id=" . $instrument['ID'] ?>">
             <h2><?= $instrument['Nom'] ?></h2></a>
         </header>
             <p><?= $instrument['Prix'] ?> dollars</p>
