@@ -8,7 +8,7 @@
 <body>
     <div>
         <div>
-        <?= $contents ?>
+        <?= $contenu ?>
         </div>
     </div>
 </body>

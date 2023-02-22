@@ -1,5 +1,5 @@
 <?php
-require 'model/Modele.php';
+require 'model/modele.php';
 
 function erreur($msgErreur) {
     require 'view/vueErreur.php';

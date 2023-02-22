@@ -1,22 +1,29 @@
 <?php
 
-function getArticles(){
-    $bdd = getBDD();
-    $instruments = $bdd->query('SELECT ID as ID, Nom as Nom, Cat as Cat, Descr as Descr, Img as Img, Prix as Prix FROM instruments');
-    return $instruments;
-}
+abstract class Modele {
 
-function getInstrument($idInstrument){
-    $bdd = getBDD(); 
-    $instr = $bdd->prepare('SELECT ID as ID, Nom as Nom, Cat as Cat, Descr as Descr, Img as Img, Prix as Prix FROM instruments WHERE ID=?');
-    $instr->execute(array($idInstrument));
-    if ($instr->rowCount() == 1)
-        return $instr->fetch(); 
-    else
-        throw new Exception("Aucun instrument ne correspond au numéro '$idInstrument'");
-}
-
-function getBDD(){
-    $bdd = new PDO('mysql:host=localhost;dbname=musicstore;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    return $bdd;
-}
+    // Objet PDO d'accès à la BD
+    private $bdd;
+  
+    // Exécute une requête SQL éventuellement paramétrée
+    protected function executerRequete($sql, $params = null) {
+      if ($params == null) {
+        $resultat = $this->getBDD()->query($sql);    // exécution directe
+      }
+      else {
+        $resultat = $this->getBDD()->prepare($sql);  // requête préparée
+        $resultat->execute($params);
+      }
+      return $resultat;
+    }
+  
+    // Renvoie un objet de connexion à la BD en initialisant la connexion au besoin
+    private function getBDD() {
+      if ($this->bdd == null) {
+        // Création de la connexion
+        $this->bdd = new PDO('mysql:host=localhost;dbname=musicstore;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+      }
+      return $this->bdd;
+    }
+  
+  }

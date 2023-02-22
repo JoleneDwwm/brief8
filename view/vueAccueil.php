@@ -1,6 +1,5 @@
-<?php $titre = 'Ukulele Store'; ?>
+<?php $this->titre = 'Ukulele Store'; ?>
 
-<?php ob_start(); ?>
 <?php foreach ($instruments as $instrument): ?>
     <div class="card">
         <header>
@@ -10,6 +9,3 @@
             <p><?= $instrument['Prix'] ?> dollars</p>
     </div>
 <?php endforeach; ?>
-<?php $contents = ob_get_clean(); ?>
-
-<?php require 'template.php'; ?>
