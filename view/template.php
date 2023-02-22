@@ -6,6 +6,7 @@
     <title><?= $titre ?></title>
 </head>
 <header>
+    <h1>the Ukulele Store</h1>
     <div><a href="http://localhost/brief8/">Page d'Accueil</a> <a href=#>Panier</a></div>
 </header>
 <body>
