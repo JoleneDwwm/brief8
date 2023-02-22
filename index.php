@@ -1,5 +1,5 @@
 <?php
-require 'controller.php';
+require 'controller/controller.php';
 
 try {
     if (isset($_GET['action'])) {
@@ -23,5 +23,5 @@ try {
     }
 catch (Exception $e) {
     $msgErreur = $e->getMessage();
-    require 'vueErreur.php';
+    require 'view/vueErreur.php';
 }

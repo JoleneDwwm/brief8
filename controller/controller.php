@@ -1,16 +1,16 @@
 <?php
-require 'Modele.php';
+require 'model/Modele.php';
 
 function erreur($msgErreur) {
-    require 'vueErreur.php';
+    require 'view/vueErreur.php';
 }
 
 function accueil() {
     $instruments = getArticles(); 
-require 'vueAccueil.php';
+require 'view/vueAccueil.php';
 }
 
 function instrument($idInstrument) {
     $instr = getInstrument($idInstrument);
-    require 'vueInstrument.php';
+    require 'view/vueInstrument.php';
 }
