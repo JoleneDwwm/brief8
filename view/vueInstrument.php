@@ -1,11 +1,11 @@
-<?php $this->titre = $instr['Cat'] . "Store"; ?>
+<?php $this->titre = $instrument['Cat'] . "Store"; ?>
 
 <div class= "card">
         <header>
-            <h2><?= $instr['Nom'] ?></h1>
-            <p><?= $instr['Cat'] ?></p>
+            <h2><?= $instrument['Nom'] ?></h1>
+            <p><?= $instrument['Cat'] ?></p>
         </header>
-            <p><?= $instr['Descr'] ?></p>
-            <p><?= $instr['Img'] ?></p>
-            <p><?= $instr['Prix'] ?></p>
+            <p><?= $instrument['Descr'] ?></p>
+            <p><?= $instrument['Img'] ?></p>
+            <p><?= $instrument['Prix'] ?></p>
 </div>

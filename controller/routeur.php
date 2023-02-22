@@ -1,39 +1,39 @@
 <?php
 
-require_once 'Controller/ControleurAccueil.php';
-require_once 'Controller/ControleurInstruments.php';
+require_once 'controller/controleurAccueil.php';
+require_once 'controller/controleurInstruments.php';
 require_once 'view/vue.php';
 
 class Routeur {
 
   private $ctrlAccueil;
-  private $ctrlBillet;
+  private $ctrlInstr;
 
   public function __construct() {
     $this->ctrlAccueil = new ControleurAccueil();
-  //  $this->ctrlBillet = new ControleurBillet();
+    $this->ctrlInstr = new ControleurInstruments();
   }
 
   // Traite une requête entrante
   public function routerRequete() {
     try {
-      if (isset($_GET['action'])) {
-        if ($_GET['action'] == 'billet') {
-          if (isset($_GET['id'])) {
-            $idBillet = intval($_GET['id']);
-            if ($idBillet != 0) {
-              $this->ctrlBillet->billet($idBillet);
+        if (isset($_GET['action'])) {
+            if ($_GET['action'] == 'instrument') {
+                if (isset($_GET['id'])) {
+                    $idInstrument = intval($_GET['id']);
+                        if ($idInstrument != 0) {
+                            $this->ctrlInstr->instrument($idInstrument);
+                        }
+                        else
+                            throw new Exception("Identifiant d'instrument incorrect");
+                    }
+                    else
+                        throw new Exception("Aucun identifiant d'instrument");
             }
             else
-              throw new Exception("Identifiant de billet non valide");
-          }
-          else
-            throw new Exception("Identifiant de billet non défini");
-        }
-        else
-          throw new Exception("Action non valide");
+                throw new Exception("Action invalide!");
       }
-      else {  // aucune action définie : affichage de l'accueil
+      else { 
         $this->ctrlAccueil->accueil();
       }
     }
@@ -42,7 +42,6 @@ class Routeur {
     }
   }
 
-  // Affiche une erreur
   private function erreur($msgErreur) {
     $vue = new Vue("Erreur");
     $vue->generer(array('msgErreur' => $msgErreur));

@@ -15,9 +15,9 @@ public function getInstrument($idInstrument){
 //    $instr = $bdd->prepare('SELECT ID as ID, Nom as Nom, Cat as Cat, Descr as Descr, Img as Img, Prix as Prix FROM instruments WHERE ID=?');
 //    $instr->execute(array($idInstrument));
 $sql = 'SELECT ID as ID, Nom as Nom, Cat as Cat, Descr as Descr, Img as Img, Prix as Prix FROM instruments WHERE ID=?';
-$instr = $this->executerRequete($sql, array($idInstrument));
-    if ($instr->rowCount() == 1)
-        return $instr->fetch(); 
+$instrument = $this->executerRequete($sql, array($idInstrument));
+    if ($instrument->rowCount() == 1)
+        return $instrument->fetch(); 
     else
         throw new Exception("Aucun instrument ne correspond au numéro '$idInstrument'");
 }
