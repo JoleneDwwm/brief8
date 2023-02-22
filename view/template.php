@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="styles/style.css" />
     <title><?= $titre ?></title>
 </head>
+<header>
+    <div><a href="http://localhost/brief8/">Page d'Accueil</a> <a href=#>Panier</a></div>
+</header>
 <body>
     <div>
         <div>
@@ -13,5 +16,5 @@
     </div>
 </body>
 <footer>
-    <p>Les articles vendus sont issus du site <a href="https://www.magicfluke.com/">the Magic Fluke Company</a>.</p>
+    <p>Les articles présentés sont issus du site <a href="https://www.magicfluke.com/">the Magic Fluke Company</a>.</p>
 </footer>
