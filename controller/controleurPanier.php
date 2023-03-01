@@ -33,14 +33,12 @@ class ControleurPanier {
   // Ajout d'un instrument au panier
   public function addInstrumentPanier($idInstr, $qtite){
     $panier = $this->panier->addInstrument($idInstr, $qtite);
-    // affiche ensuite le panier mis à jour (méthode de cette classe)
     $panier = $this->getPanier();
   }
 
   // Retirer un instrument du panier
-  public function delInstrumentPanier($idInstr){
-    $panier = $this->panier->delInstrument($idInstr);
-    // affiche ensuite le panier mis à jour (méthode de cette classe)
+  public function deleteInstrumentPanier($idInstr){
+    $panier = $this->panier->deleteInstrument($idInstr);
     $panier = $this->getPanier();
   }
 

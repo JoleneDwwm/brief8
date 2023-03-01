@@ -20,7 +20,7 @@ class Panier extends Modele  {
         $this->savePanier();
     }
 
-    public function delInstrument($idInstr) {
+    public function deleteInstrument($idInstr) {
         unset($this->items[$idInstr]);
         $this->savePanier();
     }

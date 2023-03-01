@@ -17,7 +17,6 @@ class Routeur {
     $this->ctrlPanier = new ControleurPanier();
   }
 
-  // Traite une requête entrante
   public function routerRequete() {
     try {
 
@@ -25,6 +24,10 @@ class Routeur {
 
         switch ($_GET['action']) {
           
+          case 'accueil': 
+            $this->ctrlAccueil->accueil();
+          break;
+
           case 'instrument':
             if (isset($_GET['id'])) {
               $idInstrument = intval($_GET['id']);

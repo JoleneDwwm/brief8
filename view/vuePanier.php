@@ -16,4 +16,4 @@
     <div class="card"> 
         <p>Panier vide!</p>
     </div>
-    <?php endif ?>
+    <?php endif ; ?>
