@@ -12,5 +12,8 @@
             <p><?= $instrument['Prix'] ?></p>
 </div>
     <?php endforeach ; ?>
-    <?php else : echo "Panier vide" ; ?>
+    <?php else : ?> 
+    <div class="card"> 
+        <p>Panier vide!</p>
+    </div>
     <?php endif ?>

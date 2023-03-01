@@ -2,19 +2,19 @@
 
 require_once 'controller/controleurAccueil.php';
 require_once 'controller/controleurInstruments.php';
-//require_once 'controller/controleurPanier.php';
+require_once 'controller/controleurPanier.php';
 require_once 'view/vue.php';
 
 class Routeur {
 
   private $ctrlAccueil;
   private $ctrlInstr;
-  // private $ctrlPanier;
+  private $ctrlPanier;
 
   public function __construct() {
     $this->ctrlAccueil = new ControleurAccueil();
     $this->ctrlInstr = new ControleurInstruments();
-  //  $this->ctrlPanier = new ControleurPanier();
+    $this->ctrlPanier = new ControleurPanier();
   }
 
   // Traite une requête entrante
@@ -36,6 +36,10 @@ class Routeur {
             }
             else
               throw new Exception("Aucun identifiant d'instrument");
+          break;
+
+          case 'getPanier': 
+              $this->ctrlPanier->getPanier(); 
           break;
 
           default:

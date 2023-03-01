@@ -2,7 +2,7 @@
 
 require_once 'model/panier.php';
 require_once 'model/instruments.php';
-require_once 'vue/vue.php';
+require_once 'view/vue.php';
 
 class ControleurPanier {
 
@@ -21,7 +21,7 @@ class ControleurPanier {
     if (!empty($panier)){ 
         foreach ($panier as $key => $value) {
             echo "{$key} => {$value} "; //$key est l'identifiant de l'instrument et $value est la quantité
-            $this->instrumentAdded = new Instrument();
+            $this->instrumentAdded = new instruments();
             $tmp = $this->instrumentAdded->getInstrument($key);  //$key est l'identifiant de l'instrument
             array_push($data, $tmp);
         }
