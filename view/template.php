@@ -7,7 +7,7 @@
 </head>
 <header>
     <h1>the Ukulele Store</h1>
-    <div><a href="http://localhost/brief8/">Page d'Accueil</a> <a href=#>Panier</a></div>
+    <div><a href="http://localhost/brief8/">Page d'Accueil</a> <a href="http://localhost/view/vuePanier.php">Panier</a></div>
 </header>
 <body>
     <div>
