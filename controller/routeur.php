@@ -42,8 +42,44 @@ class Routeur {
           break;
 
           case 'getPanier': 
-              $this->ctrlPanier->getPanier(); 
+            $this->ctrlPanier->getPanier(); 
           break;
+
+          case "panier":
+            if (isset($_GET['id'])) {
+              $idInstrument = intval($_GET['id']);
+              if ($idInstrument != 0) {
+                $qtite = 1;
+                //$qtite = readline('Enter la quantité souhaitée : '); // méthode pour le terminal
+                $this->ctrlPanier->addInstrumentPanier($idInstrument, $qtite); 
+              }
+              else
+                throw new Exception("Identifiant instrument non valide!");
+            }
+            elseif (isset($_GET['idplus'])){
+              $idInstrument = intval($_GET['idplus']);
+              if($idInstrument!=0){
+                $qtite = 1;
+                //$qtite = readline('Enter la quantité souhaitée : '); // méthode pour le terminal
+                $this->ctrlPanier->addInstrumentPanier($idInstrument, $qtite); 
+              }
+              else
+                throw new Exception("Identifiant instrument non valide!");
+            }
+            elseif (isset($_GET['idmoins'])){
+              $idInstrument = intval($_GET['idmoins']);
+              if($idInstrument!=0){
+                $nb = 1;
+                $this->ctrlPanier->reduceQuantity($idInstrument, $nb); 
+              }
+              else
+                throw new Exception("Identifiant instrument non valide!");
+            }
+            else
+              {
+                $this->ctrlPanier->getPanier();                
+              }  
+            break;
 
           default:
             throw new Exception("Action invalide!");
