@@ -24,6 +24,10 @@
 <!--Voir tous les instruments (Read) et les modifier (Update) -->
 <?php foreach ($instruments as $instrument): ?>
 <div class="card">
+    <tr>
+        <th>Détails de l'instrument</th>
+        <th>Modifier l'instrument</th>
+    </tr>
         <tr>
             <td><p><?= $instrument['ID'] ?></p></td>
             <td><h2><?= $instrument['Nom'] ?></h1></td>

@@ -31,7 +31,7 @@ class admin extends modele {
             $update2 = $_POST['update3'];
             $update2 = $_POST['update4'];
             $update2 = $_POST['update6'];
-            $sql = "UPDATE liens SET nom = '$modified1', url = '$modified2', description = '$modified3' WHERE numero = '$idNumber'";
+            $sql = "UPDATE instruments SET nom = '$update2', cat = '$update3', descr = '$update4', prix = '$update6' WHERE ID = '$idNumber'";
             $this->executerRequete($sql);
         }
     }

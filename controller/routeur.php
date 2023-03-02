@@ -3,6 +3,7 @@
 require_once 'controller/controleurAccueil.php';
 require_once 'controller/controleurInstruments.php';
 require_once 'controller/controleurPanier.php';
+require_once 'controller/controleurAdmin.php';
 require_once 'view/vue.php';
 
 class Routeur {
@@ -10,11 +11,13 @@ class Routeur {
   private $ctrlAccueil;
   private $ctrlInstr;
   private $ctrlPanier;
+  private $ctrlAdmin;
 
   public function __construct() {
     $this->ctrlAccueil = new ControleurAccueil();
     $this->ctrlInstr = new ControleurInstruments();
     $this->ctrlPanier = new ControleurPanier();
+    $this->ctrlAdmin = new ControleurAdmin();
   }
 
   public function routerRequete() {
@@ -26,6 +29,10 @@ class Routeur {
           
           case 'accueil': 
             $this->ctrlAccueil->accueil();
+          break;
+
+          case 'admin': 
+            $this->ctrlAdmin->adminPanel();
           break;
 
           case 'instrument':
