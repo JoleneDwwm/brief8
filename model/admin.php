@@ -2,7 +2,7 @@
 
 require_once 'model/modele.php';
 
-class admin extends modele {
+class admin extends Modele {
 
     // Read
     public function getAllArticles(){

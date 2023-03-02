@@ -34,7 +34,8 @@
             <td><p><?= $instrument['Cat'] ?></p></td>
             <td><p><?= $instrument['Descr'] ?></p></td>
             <td><p><?= $instrument['Img'] ?></p></td>
-            <td><p><?= $instrument['Prix'] ?></p></td>
+            <td><p><?= $instrument['Prix'] ?> €</p></td>
+            <td><p><?= $instrument['Stocks'] ?> en stock</p></td>
         </tr>
     <form method="post">
         <tr>
