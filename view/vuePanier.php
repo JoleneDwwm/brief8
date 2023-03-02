@@ -10,6 +10,8 @@
             <p><?= $instrument['Descr'] ?></p>
             <p><?= $instrument['Img'] ?></p>
             <p><?= $instrument['Prix'] ?></p>
+
+            <button type="button"><a href="<?= "index.php?action=panier&idplus=".$instrument['ID'] ?>">Ajouter</a></button> <button type="button"><a href="<?= "index.php?action=panier&idmoins=".$instrument['ID'] ?>">Supprimer</a></button>
 </div>
     <?php endforeach ; ?>
     <?php else : ?> 
